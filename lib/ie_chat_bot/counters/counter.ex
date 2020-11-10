@@ -7,6 +7,7 @@ defmodule IeChatBot.Counters.Counter do
     field :counter_key, :string
     field :user_id, :integer
     field :username, :string
+    field :date, :date
 
     timestamps()
   end
@@ -14,7 +15,7 @@ defmodule IeChatBot.Counters.Counter do
   @doc false
   def changeset(counter, attrs) do
     counter
-    |> cast(attrs, [:counter_key, :user_id, :username, :chat_id])
-    |> validate_required([:counter_key, :user_id, :username, :chat_id])
+    |> cast(attrs, [:counter_key, :user_id, :username, :chat_id, :date])
+    |> validate_required([:counter_key, :user_id, :username, :chat_id, :date])
   end
 end

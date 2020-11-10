@@ -1,16 +1,16 @@
-defmodule IeChatBot.TimeToMoveOut do
+defmodule IeChatBot.Rechickoe do
   use IeChatBot.Constants
 
   alias IeChatBot.Counters
   alias IeChatBot.Telegram
 
-  @regex ~r/валит|валим/i
+  @regex ~r/речицко|речецко/i
 
   def call(message) do
     metadata = Telegram.metadata(message)
 
     if(Regex.match?(@regex, metadata.input_message)) do
-      message = @time_to_move_out_counter_key
+      message = @rechickoe_counter_key
       |> Counters.increment(metadata.chat_id, metadata.user_id, metadata.username)
       |> Counters.generate_message()
 
