@@ -1,13 +1,6 @@
 use Mix.Config
 
-# Configure your database
-config :ie_chat_bot, IeChatBot.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "ie_chat_bot_dev",
-  hostname: "localhost",
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -26,6 +19,7 @@ config :ie_chat_bot, IeChatBotWeb.Endpoint,
       "--mode",
       "development",
       "--watch-stdin",
+      "--color",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]
@@ -74,3 +68,5 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+import_config "dev.secret.exs"
