@@ -20,6 +20,14 @@ defmodule IeChatBotWeb.Router do
     live "/", PageLive, :index
   end
 
+  scope "/api", IeChatBotWeb do
+    pipe_through :api
+
+    scope "/bot" do
+      post "/webhook", BotController, :webhook
+    end
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", IeChatBotWeb do
   #   pipe_through :api
