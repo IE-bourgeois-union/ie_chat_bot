@@ -4,7 +4,7 @@ defmodule IeChatBot.TimeToMoveOut do
   alias IeChatBot.Counters
   alias IeChatBot.Telegram
 
-  @regex ~r/валит|валим/i
+  @regex ~r/валит|валим/iu
 
   def call(message) do
     metadata = Telegram.metadata(message)

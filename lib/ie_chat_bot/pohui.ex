@@ -1,16 +1,16 @@
-defmodule IeChatBot.Rechickoe do
+defmodule IeChatBot.Pohui do
   use IeChatBot.Constants
 
   alias IeChatBot.Counters
   alias IeChatBot.Telegram
 
-  @regex ~r/речицк|речецк/iu
+  @regex ~r/похуй|похуи|пахуи|да\sпох/iu
 
   def call(message) do
     metadata = Telegram.metadata(message)
 
     if(Regex.match?(@regex, metadata.input_message)) do
-      message = @rechickoe_counter_key
+      message = @pohui_counter_key
       |> Counters.increment(metadata.chat_id, metadata.user_id, metadata.username)
       |> Counters.generate_message()
 

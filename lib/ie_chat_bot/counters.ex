@@ -34,6 +34,14 @@ defmodule IeChatBot.Counters do
         """
         🍺 Количество упоминаний речицкого от `#{counter.username}` за сегодня - `#{number_of_counters_today}`
         """
+      @i_stay_counter_key ->
+        """
+        ✌️ Количество оставшихся `#{counter.username}` за сегодня - `#{number_of_counters_today}`
+        """
+      @pohui_counter_key ->
+        """
+        𓂸 Количество похуёв `#{counter.username}` за сегодня - `#{number_of_counters_today}`
+        """
     end
   end
 
